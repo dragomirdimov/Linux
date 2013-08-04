@@ -1,0 +1,18 @@
+18. Describe the procedure of marking badblocks in Ext2/3/4 FS(including the tools that are needed).
+
+e2fsck -c <device>
+e2fsck is a fsck(file system check) program used to check the ext2/ext3/ext4 family of file systems.
+
+-c
+This option causes e2fsck to use badblocks(8) program to do a read-only scan of the device in order 
+to find any bad blocks. If any bad blocks are found, they are added to the bad block inode to 
+prevent them from being allocated to a file or directory. If this option is specified twice (-cc), 
+then the bad block scan will be done using a non-destructive read-write test.  
+
+  
+badblocks is a Linux utility used to search for bad blocks on a device (usually a disk partition). 
+	
+For more information:
+http://linux.die.net/man/8/e2fsck
+http://linux.die.net/man/8/badblocks
+http://en.wikipedia.org/wiki/E2fsprogs
