@@ -1,0 +1,40 @@
+4. Write down at least 3 Linux file systems optimized especially for Flash drives(SD 
+cards, USB Drives, SSD disks).
+
+JFFS2
+JFFS2 is a popular general file system for Flash. JFFS2 was designed for NOR devices, but 
+also supports NAND devices. JFFS2 is a logging file system that uses i-nodes to store 
+data. The file system treats each flash block separately, maintaining lists of blocks that 
+contain valid nodes (clean), blocks that have some dirty i-nodes (dirty), and blocks that 
+are erased and available for use (free). This provides flexibility to the garbage 
+collection algorithms and allows JFFS2 to support static wear leveling by selecting blocks 
+from the clean list as well as from the dirty list. Because JFFS2 builds links of nodes 
+and tracks each block, RAM usage increases with the size of the device(s) used in the file 
+system. With large devices, memory usage and mount time become increasingly problematic 
+with JFFS2. For Flash volumes over 256MB, JFFS2 is not recommended due to excessive mount 
+time and RAM usage when compared with other writable Flash file systems.
+
+YAFFS/YAFFS2
+YAFFS is a general purpose NAND file system. Unlike JFFS2, YAFFS only supports NAND. YAFFS 
+assigns block sequence numbers to improve initialization and mount time. It also stores a 
+representation of the file system back into Flash from RAM on shutdown. This also improves 
+mount time.
+
+LOGFS
+LOGFS is a logging flash file system intended to resolve the mount performance and RAM 
+scalability issues of JFFS2. In addition, LOGFS provides simple versioning capabilities in 
+the form of “snapshots.” LOGFS is in the process of being refined.
+
+UBIFS
+UBIFS is a relatively new file system designed to correct some of the shortfalls of JFFS2 
+and YAFFS2. UBIFS is more predictable in initialization performance and RAM requirements, 
+making it a good choice for a general purpose file system as designs move to larger file 
+system volume sizes.
+
+
+
+http://digital2.org/c/choosing-a-linux-file-system-for-flash-memory-devices-book-w470.pdf
+http://en.wikipedia.org/wiki/JFFS2
+http://en.wikipedia.org/wiki/YAFFS
+http://en.wikipedia.org/wiki/LogFS
+http://en.wikipedia.org/wiki/UBIFS
