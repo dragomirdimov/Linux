@@ -1,0 +1,35 @@
+4. Describe the SELinux security model.
+
+Security-enhanced Linux (SELinux) is a reference implementation of the Flask security 
+architecture for flexible mandatory access control. It was created to demonstrate the 
+value of flexible mandatory access controls and how such controls could be added to an 
+operating system. The Flask architecture has been subsequently mainstreamed into Linux® 
+and ported to several other systems, including the Solaris™ operating system, the FreeBSD® 
+operating system, and the Darwin kernel, spawning a wide range of related work. The Flask 
+architecture provides general support for the enforcement of many kinds of mandatory 
+access control policies, including those based on the concepts of Type Enforcement®, 
+Role-based Access Control, and Multi-level Security.
+
+Security-enhanced Linux has a well-defined architecture for flexible mandatory access 
+controls that has been experimentally validated through several prototype systems (DTMach, 
+DTOS, Flask). Detailed studies have been performed of the ability of the architecture to 
+support a wide variety of security policies.
+
+The architecture provides fine-grained controls over many kernel abstractions and services 
+that are not controlled by other systems. Some of the distinctive characteristics of the 
+Security-enhanced Linux system are:
+
+    Clean Separation of Policy from Enforcement
+    Well-Defined Policy Interfaces
+    Independent of Specific Policies and Policy Languages
+    Independent of Specific Security Label Formats and Contents
+    Individual Labels and Controls for Kernel Objects and Services
+    Caching of Access Decisions for Efficiency
+    Support for Policy Changes
+    Controls over Process Initialization and Inheritance and Program Execution
+    Controls over File Systems, Directories, Files, and Open File Descriptions
+    Controls over Sockets, Messages, and Network Interfaces
+    Controls over Use of "Capabilities"
+
+http://www.nsa.gov/research/selinux/faqs.shtml
+http://en.wikipedia.org/wiki/Security-Enhanced_Linux  
